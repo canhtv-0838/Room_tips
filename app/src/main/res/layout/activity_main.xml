@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tip1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="1.Pre-populate the database"
+            android:textAllCaps="false"
+            android:onClick="startTip1Activity"
+            app:layout_constraintBottom_toTopOf="@+id/tip2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tip2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="2.Use DAO’s inheritance capability"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/tip3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tip1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tip3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="3.Execute queries in transactions with minimal boilerplate code"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/tip4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tip2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tip4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="4.Read only what you need"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/tip5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tip3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tip5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="5.Enforce constraints between entities with foreign keys"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/tip6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tip4" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tip6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="6.Simplify one-to-many queries via @Relation"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/tip7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tip5" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tip7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="7.Avoid false positive notifications for observable queries"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tip6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
