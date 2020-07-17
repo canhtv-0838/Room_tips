@@ -37,7 +37,7 @@ abstract class DataDatabase : RoomDatabase() {
                         super.onCreate(db)
                         // insert the data on the IO Thread
                         CoroutineScope(Dispatchers.IO).launch {
-                            getInstance(context).dataDao().insertData(PREPOPULATE_DATA)
+                            getInstance(context).dataDao().insert(PREPOPULATE_DATA)
                         }
                     }
 

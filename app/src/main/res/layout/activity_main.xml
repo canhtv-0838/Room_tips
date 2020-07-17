@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:text="2.Use DAO’s inheritance capability"
             android:textAllCaps="false"
+            android:onClick="startTip2Activity"
             app:layout_constraintBottom_toTopOf="@+id/tip3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

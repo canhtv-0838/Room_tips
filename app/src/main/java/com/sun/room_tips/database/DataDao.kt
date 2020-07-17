@@ -6,10 +6,7 @@ import androidx.room.Query
 import com.sun.room_tips.data.Data
 
 @Dao
-interface DataDao {
-
-    @Insert
-    fun insertData(data: List<Data>)
+interface DataDao : BaseDao<Data> {
 
     @Query("SELECT * FROM Data")
     fun getData(): List<Data>
