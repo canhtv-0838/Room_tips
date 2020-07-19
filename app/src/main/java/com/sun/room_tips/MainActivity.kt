@@ -25,6 +25,10 @@ class MainActivity : BaseActivity() {
         startActivity(Tip3Activity::class.java)
     }
 
+    fun startTip4Activity(view: View) {
+        startActivity(Tip4Activity::class.java)
+    }
+
     private fun startActivity(cls: Class<*>) {
         startActivity(Intent(this, cls))
     }

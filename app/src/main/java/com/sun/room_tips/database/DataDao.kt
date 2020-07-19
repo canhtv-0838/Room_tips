@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
 import com.sun.room_tips.data.Data
+import com.sun.room_tips.data.DataValue
 
 @Dao
 interface DataDao : BaseDao<Data> {
@@ -17,4 +18,7 @@ interface DataDao : BaseDao<Data> {
         delete(deletedData)
         insert(insertedData)
     }
+
+    @Query("SELECT value FROM data")
+    fun readOnlyValue() : List<DataValue>
 }
