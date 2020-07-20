@@ -1,7 +1,7 @@
 package com.sun.room_tips.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
-import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
 import com.sun.room_tips.data.Data
@@ -21,9 +21,12 @@ interface DataDao : BaseDao<Data> {
     }
 
     @Query("SELECT value FROM data")
-    fun readOnlyValue() : List<DataValue>
+    fun readOnlyValue(): List<DataValue>
 
     @Transaction
     @Query("SELECT * FROM Data")
     fun getDataAndUser(): List<DataAndUser>
+
+    @Query("SELECT * FROM Data WHERE id=:dataId")
+    fun getDataChanged(dataId: String): LiveData<Data>
 }

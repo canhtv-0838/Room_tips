@@ -92,6 +92,7 @@
             android:id="@+id/tip7"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:onClick="startTip7Activity"
             android:text="7.Avoid false positive notifications for observable queries"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
