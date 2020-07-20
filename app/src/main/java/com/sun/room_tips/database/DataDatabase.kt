@@ -6,19 +6,21 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.sun.room_tips.data.Data
+import com.sun.room_tips.data.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.io.File
 
-@Database(entities = arrayOf(Data::class), version = 1)
+@Database(entities = arrayOf(Data::class, User::class), version = 1)
 abstract class DataDatabase : RoomDatabase() {
 
     abstract fun dataDao(): DataDao
+    abstract fun userDao(): UserDao
 
     companion object {
 
-        @Volatile private var INSTANCE: DataDatabase? = null
+        @Volatile
+        private var INSTANCE: DataDatabase? = null
 
         fun getInstance(context: Context): DataDatabase =
             INSTANCE ?: synchronized(this) {
@@ -38,6 +40,7 @@ abstract class DataDatabase : RoomDatabase() {
                         // insert the data on the IO Thread
                         CoroutineScope(Dispatchers.IO).launch {
                             getInstance(context).dataDao().insert(PREPOPULATE_DATA)
+                            getInstance(context).userDao().insert(PREPOPULATE_USER)
                         }
                     }
 
@@ -51,6 +54,13 @@ abstract class DataDatabase : RoomDatabase() {
                 .build()
 
         val PREPOPULATE_DATA = listOf(Data("1", "val 1"), Data("2", "val 2"))
+        val PREPOPULATE_USER = listOf(
+            User("1", "name 1", "1"),
+            User("2", "name 2", "1"),
+            User("3", "name 3", "1"),
+            User("4", "name 4", "2"),
+            User("5", "name 5", "2")
+        )
 
     }
 }

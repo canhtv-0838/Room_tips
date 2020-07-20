@@ -29,6 +29,14 @@ class MainActivity : BaseActivity() {
         startActivity(Tip4Activity::class.java)
     }
 
+//    fun startTip5Activity(view: View) {
+//        startActivity(Tip5Activity::class.java)
+//    }
+
+    fun startTip6Activity(view: View) {
+        startActivity(Tip6Activity::class.java)
+    }
+
     private fun startActivity(cls: Class<*>) {
         startActivity(Intent(this, cls))
     }
